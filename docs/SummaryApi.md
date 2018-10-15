@@ -18,11 +18,11 @@ Tries to get the result of a request using the task id of the request
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.SummaryApi;
+//import ProWritingAid.ApiClient;
+//import ProWritingAid.ApiException;
+//import ProWritingAid.Configuration;
+//import ProWritingAid.auth.*;
+//import ProWritingAid.SDK.SummaryApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -72,11 +72,11 @@ Gets the summary analysis of a document
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.SummaryApi;
+//import ProWritingAid.ApiClient;
+//import ProWritingAid.ApiException;
+//import ProWritingAid.Configuration;
+//import ProWritingAid.auth.*;
+//import ProWritingAid.SDK.SummaryApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 

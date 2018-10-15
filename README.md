@@ -6,43 +6,6 @@ Building the API client library requires [Maven](https://maven.apache.org/) to b
 
 ## Installation
 
-To install the API client library to your local Maven repository, simply execute:
-
-```shell
-mvn install
-```
-
-To deploy it to a remote Maven repository instead, configure the settings of the repository and execute:
-
-```shell
-mvn deploy
-```
-
-Refer to the [official documentation](https://maven.apache.org/plugins/maven-deploy-plugin/usage.html) for more information.
-
-### Maven users
-
-Add this dependency to your project's POM:
-
-```xml
-<dependency>
-    <groupId>prowritingaid</groupId>
-    <artifactId>pro_writing_aid_java</artifactId>
-    <version>2.0.0</version>
-    <scope>compile</scope>
-</dependency>
-```
-
-### Gradle users
-
-Add this dependency to your project's build file:
-
-```groovy
-compile "prowritingaid:pro_writing_aid_java:2.0.0"
-```
-
-### Others
-
 At first generate the JAR by executing:
 
     mvn package
@@ -58,19 +21,16 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import io.swagger.client.*;
-import io.swagger.client.auth.*;
-import io.swagger.client.model.*;
-import io.swagger.client.api.ContextualThesaurusApi;
-
-import java.io.File;
-import java.util.*;
+import ProWritingAid.*;
+import ProWritingAid.auth.*;
+import ProWritingAid.SDK.*;
+import ProWritingAid.SDK.ContextualThesaurusApi;
 
 public class ContextualThesaurusApiExample {
 
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        
+
         // Configure API key authorization: licenseCode
         ApiKeyAuth licenseCode = (ApiKeyAuth) defaultClient.getAuthentication("licenseCode");
         licenseCode.setApiKey("YOUR API KEY");
@@ -78,12 +38,18 @@ public class ContextualThesaurusApiExample {
         //licenseCode.setApiKeyPrefix("Token");
 
         ContextualThesaurusApi apiInstance = new ContextualThesaurusApi();
-        String taskId = "taskId_example"; // String | 
         try {
-            AsyncResponseContextualThesaurusResponse result = apiInstance.get(taskId);
+            ContextualThesaurusRequest request = new ContextualThesaurusRequest();
+            request.setContext("This is a sample text in English to test the sdk " +
+                        "thesaurus. This is a second paragraph in the document." +
+                        " This  is a new line.");
+            request.setContextStart(17);
+            request.setContextEnd(20);
+
+            AsyncResponseContextualThesaurusResponse result = apiInstance.post(request);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ContextualThesaurusApi#get");
+            System.err.println("Exception when calling ContextualThesaurusApi#post");
             e.printStackTrace();
         }
     }

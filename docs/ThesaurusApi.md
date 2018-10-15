@@ -17,11 +17,11 @@ Returns the thesaurus entries for a specific word
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.ThesaurusApi;
+//import ProWritingAid.ApiClient;
+//import ProWritingAid.ApiException;
+//import ProWritingAid.Configuration;
+//import ProWritingAid.auth.*;
+//import ProWritingAid.SDK.ThesaurusApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
