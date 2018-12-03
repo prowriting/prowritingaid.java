@@ -18,8 +18,8 @@ Tries to get the result of a request using the task id of the request
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.WordCloudApi;
+//import ProWritingAid.ApiException;
+//import ProWritingAid.SDK.WordCloudApi;
 
 
 WordCloudApi apiInstance = new WordCloudApi();
@@ -62,8 +62,8 @@ Analyses text and returns a word cloud (as an image)
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.WordCloudApi;
+//import ProWritingAid.ApiException;
+//import ProWritingAid.SDK.WordCloudApi;
 
 
 WordCloudApi apiInstance = new WordCloudApi();
