@@ -24,9 +24,10 @@ Please follow the [installation](#installation) instruction and execute the foll
 import ProWritingAid.*;
 import ProWritingAid.auth.*;
 import ProWritingAid.SDK.*;
-import ProWritingAid.SDK.ContextualThesaurusApi;
 
-public class ContextualThesaurusApiExample {
+import java.util.Arrays;
+
+public class GrammarApiExample {
 
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
@@ -34,19 +35,24 @@ public class ContextualThesaurusApiExample {
         // Configure API key authorization: licenseCode
         ApiKeyAuth licenseCode = (ApiKeyAuth) defaultClient.getAuthentication("licenseCode");
         licenseCode.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //licenseCode.setApiKeyPrefix("Token");
 
-        ContextualThesaurusApi apiInstance = new ContextualThesaurusApi();
+        TextApi apiInstance = new TextApi();
         try {
-            ContextualThesaurusRequest request = new ContextualThesaurusRequest();
-            request.setContext("This is a sample text in English to test the sdk " +
-                        "thesaurus. This is a second paragraph in the document." +
-                        " This  is a new line.");
-            request.setContextStart(17);
-            request.setContextEnd(20);
+            TextAnalysisRequest request = new TextAnalysisRequest();
+            request.setText("I place my cane firmly on the ground and, slowly, with its aid, " +
+                    "I lower myself from the hammock. Now the rains have gone my joints " +
+                    "don't hurt so badly. Today won't be too bad, I think. I'm prone to " +
+                    "be over optimistic. Could this be my last day. At this time the jungle " +
+                    "is strangely subdued. She poke around in the ashes. Every day the " +
+                    "weariness is even worst than beofre. I don't know yett. \n" +
+                    "Whne? What a weka statement. Jaroslav Drabny is a Czech football goalkeeper. " +
+                    "Bhuvnehwar Kumar is a Czech football goalkeeper. I just saw Siyabonga Siyo. " +
+                    "I just saw Siyabonga Seyo. I read this article on RaelSport.");
+            request.setReports(Arrays.asList("grammar"));
+            request.setStyle(TextAnalysisRequest.StyleEnum.GENERAL);
+            request.setLanguage(TextAnalysisRequest.LanguageEnum.EN);
 
-            AsyncResponseContextualThesaurusResponse result = apiInstance.post(request);
+            AsyncResponseTextAnalysisResponse result = apiInstance.post(request);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ContextualThesaurusApi#post");
