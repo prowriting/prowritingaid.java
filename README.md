@@ -55,7 +55,7 @@ public class GrammarApiExample {
             AsyncResponseTextAnalysisResponse result = apiInstance.post(request);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ContextualThesaurusApi#post");
+            System.err.println("Exception when calling the API");
             e.printStackTrace();
         }
     }
