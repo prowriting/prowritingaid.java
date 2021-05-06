@@ -1,5 +1,8 @@
 # ProWritingAid.SDK
 
+
+For more information, please visit [https://prowritingaid.com/en/App/API#java](https://prowritingaid.com/en/App/API#java)
+
 ## Requirements
 
 Building the API client library requires [Maven](https://maven.apache.org/) to be installed.
